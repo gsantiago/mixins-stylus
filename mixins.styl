@@ -14,3 +14,15 @@ image-url($file)
         url($IMG-PATH + $file)
     else
         error('$IMG-PATH is not defined!')
+
+/*
+|--------------------------------------------------------------------------
+| font-url($file)
+|--------------------------------------------------------------------------
+| Similar to image-url(), but for fonts
+*/
+font-url($file)
+    if $FONT-PATH is defined
+        url($FONT-PATH + $file)
+    else
+        error('$FONT-PATH is not defined!')
