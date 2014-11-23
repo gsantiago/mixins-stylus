@@ -15,6 +15,7 @@ image-url($file)
     else
         error('$IMG-PATH is not defined!')
 
+
 /*
 |--------------------------------------------------------------------------
 | font-url($file)
@@ -27,3 +28,20 @@ font-url($file)
         url($FONT-PATH + $file)
     else
         error('$FONT-PATH is not defined!')
+
+
+/*
+|--------------------------------------------------------------------------
+| sticky-footer($footer-height [, $page-wrap = '.page-wrap'])
+|--------------------------------------------------------------------------
+| Make a sticky footer
+| More in: http://css-tricks.com/snippets/css/sticky-footer/
+*/
+sticky-footer($footer-height, $page-wrap = '.page-wrap')
+    html, body
+        height 100%
+    {$page-wrap}
+        min-height 100%
+        margin-bottom -1 * $footer-height
+        &:after
+            height $footer-height
