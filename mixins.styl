@@ -1,0 +1,16 @@
+/*
+|--------------------------------------------------------------------------
+| image-url($file)
+|--------------------------------------------------------------------------
+| Returns a image path in a url()
+|
+| Ex:
+| $IMG-PATH = '../img/'
+| background: image-url('logo.png')
+| => background: url('../img/logo.png')
+*/
+image-url($file)
+    if $IMG-PATH is defined
+        url($IMG-PATH + $file)
+    else
+        error('$IMG-PATH is not defined!')
