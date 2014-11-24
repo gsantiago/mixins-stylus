@@ -45,3 +45,33 @@ sticky-footer($footer-height, $page-wrap = '.page-wrap')
         margin-bottom -1 * $footer-height
         &:after
             height $footer-height
+
+
+/*
+|--------------------------------------------------------------------------
+| size($width [, $height = $width])
+|--------------------------------------------------------------------------
+| Returns width and height properties.
+| If any unit wasn't passed, the 'px' will be added
+| Ex:
+| size(100%, 500)
+| Returns:
+| width: 100%;
+| height: 500px;
+*/
+size($width, $height = $width)
+    if $width is a 'unit'
+        if unit($width)
+            width $width
+        else
+            width unit($width, px)
+    else
+        width $width
+    
+    if $height is a 'unit'
+        if unit($height)
+            height $height
+        else
+            height unit($height, px)
+    else
+        height $height
