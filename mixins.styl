@@ -75,3 +75,32 @@ size($width, $height = $width)
             height unit($height, px)
     else
         height $height
+
+
+/*
+|--------------------------------------------------------------------------
+| max-size($width [, $height = $width])
+|--------------------------------------------------------------------------
+| Similar to size(), but it uses max-width insted of width
+| Ex:
+| max-size(100%, 500)
+| Returns:
+| max-width: 100%;
+| height: 500px;
+*/
+max-size($width, $height = $width)
+    if $width is a 'unit'
+        if unit($width)
+            max-width $width
+        else
+            max-width unit($width, px)
+    else
+        max-width $width
+    
+    if $height is a 'unit'
+        if unit($height)
+            height $height
+        else
+            height unit($height, px)
+    else
+        height $height
