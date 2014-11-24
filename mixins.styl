@@ -148,3 +148,18 @@ font-face($fontname, $fontfile, $fontweight = normal, $fontstyle = normal)
         src: font-url($fontfile + '.eot?#iefix') format("embedded-opentype"), font-url($fontfile + '.woff') format("woff"), font-url('ttf') format("truetype"), font-url($fontfile + '.svg#Hipster') format("svg");
         font-weight $fontweight
         font-style $fontstyle
+
+
+/*
+|--------------------------------------------------------------------------
+| inline-block-holder()
+|--------------------------------------------------------------------------
+| Justifies inline-blocks
+| More in: http://www.barrelny.com/blog/text-align-justify-and-rwd/
+*/
+inline-block-holder()
+    text-align justify
+    &:after
+        content " "
+        display inline-block
+        width 100%
