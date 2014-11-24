@@ -67,7 +67,7 @@ size($width, $height = $width)
             width unit($width, px)
     else
         width $width
-    
+
     if $height is a 'unit'
         if unit($height)
             height $height
@@ -96,7 +96,7 @@ max-size($width, $height = $width)
             max-width unit($width, px)
     else
         max-width $width
-    
+
     if $height is a 'unit'
         if unit($height)
             height $height
@@ -125,7 +125,7 @@ min-size($width, $height = $width)
             min-width unit($width, px)
     else
         min-width $width
-    
+
     if $height is a 'unit'
         if unit($height)
             height $height
@@ -133,3 +133,18 @@ min-size($width, $height = $width)
             height unit($height, px)
     else
         height $height
+
+
+/*
+|--------------------------------------------------------------------------
+| font-face($fontname, $fontfile [, $fontweight = normal, $fontstyle = normal])
+|--------------------------------------------------------------------------
+| Import fonts via @font-face
+*/
+font-face($fontname, $fontfile, $fontweight = normal, $fontstyle = normal)
+    @font-face
+        font-family $fontname
+        src font-url($fontfile)
+        src: font-url($fontfile + '.eot?#iefix') format("embedded-opentype"), font-url($fontfile + '.woff') format("woff"), font-url('ttf') format("truetype"), font-url($fontfile + '.svg#Hipster') format("svg");
+        font-weight $fontweight
+        font-style $fontstyle
