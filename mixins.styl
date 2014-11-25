@@ -184,3 +184,19 @@ center($width = false, $height = auto)
         size($width, $height)
     margin-left auto
     margin-right auto
+
+
+/*
+|--------------------------------------------------------------------------
+| transform-center([$width, $height = auto])
+|--------------------------------------------------------------------------
+| Centralizes vertically a block using the 'transform' property.
+| Works well in IE9+
+*/
+center-transform($width = false, $height = auto)
+    if $width
+        size($width, $height)
+    position relative
+    top 50%
+    transform: translateY(-50%)
+    
