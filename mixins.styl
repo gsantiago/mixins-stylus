@@ -199,4 +199,32 @@ center-transform($width = false, $height = auto)
     position relative
     top 50%
     transform: translateY(-50%)
-    
+
+
+/*
+|--------------------------------------------------------------------------
+| placeholder([$color = false])
+|--------------------------------------------------------------------------
+| A mixin to define placeholder properties.
+| You can pass a block of code or just the color property
+| Ex:
+| placeholder(#666)
+| Or:
+| +placeholder()
+|   color #666
+*/
+placeholder($color = false)
+    if (vendors is not defined)
+        vendors = webkit moz o ms
+
+    for $prefix in vendors
+        if ($prefix == webkit)
+            &::-webkit-input-placeholder
+                if $color
+                    color $color
+                {block}
+        else
+            &::-{$prefix}-placeholder
+                if ($color)
+                    color $color
+                {block}
