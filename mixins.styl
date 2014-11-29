@@ -228,3 +228,20 @@ placeholder($color = false)
                 if ($color)
                     color $color
                 {block}
+
+
+/*
+|--------------------------------------------------------------------------
+| +selection()
+|--------------------------------------------------------------------------
+| Pass a code block to ::selection declaration
+| Ex:
+| +selection()
+|   color #ddd
+|   background-color #999
+*/
+selection()
+    &::selection
+        {block}
+    &::-moz-selection
+        {block}
