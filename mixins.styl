@@ -188,21 +188,6 @@ center($width = false, $height = auto)
 
 /*
 |--------------------------------------------------------------------------
-| transform-center([$width, $height = auto])
-|--------------------------------------------------------------------------
-| Centralizes vertically a block using the 'transform' property.
-| Works well in IE9+
-*/
-center-transform($width = false, $height = auto)
-  if $width
-    size($width, $height)
-  position relative
-  top 50%
-  transform: translateY(-50%)
-
-
-/*
-|--------------------------------------------------------------------------
 | placeholder([$color = false])
 |--------------------------------------------------------------------------
 | A mixin to define placeholder properties.
