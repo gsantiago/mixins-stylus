@@ -213,3 +213,17 @@ placeholder($color = false)
         if ($color)
             color $color
         {block}
+
+
+/*
+|--------------------------------------------------------------------------
+| fluid-image([$display = false])
+|--------------------------------------------------------------------------
+| A simple mixin to make images responsives.
+| You can pass a display property
+*/
+fluid-image($display = false)
+  if $display
+    display $display
+  max-width 100%
+  height auto
