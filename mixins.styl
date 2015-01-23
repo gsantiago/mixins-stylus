@@ -10,10 +10,10 @@
 | => background: url('../img/logo.png')
 */
 image-url($file)
-    if $IMG-PATH is defined
-        url($IMG-PATH + $file)
-    else
-        error('$IMG-PATH is not defined!')
+  if $IMG-PATH is defined
+    url($IMG-PATH + $file)
+  else
+    error('$IMG-PATH is not defined!')
 
 
 /*
@@ -24,10 +24,10 @@ image-url($file)
 | This mixin is used by font-face() mixin
 */
 font-url($file)
-    if $FONT-PATH is defined
-        url($FONT-PATH + $file)
-    else
-        error('$FONT-PATH is not defined!')
+  if $FONT-PATH is defined
+    url($FONT-PATH + $file)
+  else
+    error('$FONT-PATH is not defined!')
 
 
 /*
@@ -38,13 +38,13 @@ font-url($file)
 | More in: http://css-tricks.com/snippets/css/sticky-footer/
 */
 sticky-footer($footer-height, $page-wrap = '.page-wrap')
-    html, body
-        height 100%
-    {$page-wrap}
-        min-height 100%
-        margin-bottom -1 * $footer-height
-        &:after
-            height $footer-height
+  html, body
+    height 100%
+  {$page-wrap}
+    min-height 100%
+    margin-bottom -1 * $footer-height
+    &:after
+      height $footer-height
 
 
 /*
@@ -60,21 +60,21 @@ sticky-footer($footer-height, $page-wrap = '.page-wrap')
 | height: 500px;
 */
 size($width, $height = $width)
-    if $width is a 'unit'
-        if unit($width)
-            width $width
-        else
-            width unit($width, px)
+  if $width is a 'unit'
+    if unit($width)
+      width $width
     else
-        width $width
+      width unit($width, px)
+  else
+    width $width
 
-    if $height is a 'unit'
-        if unit($height)
-            height $height
-        else
-            height unit($height, px)
+  if $height is a 'unit'
+    if unit($height)
+      height $height
     else
-        height $height
+      height unit($height, px)
+  else
+    height $height
 
 
 /*
@@ -89,21 +89,21 @@ size($width, $height = $width)
 | height: 500px;
 */
 max-size($width, $height = $width)
-    if $width is a 'unit'
-        if unit($width)
-            max-width $width
-        else
-            max-width unit($width, px)
+  if $width is a 'unit'
+    if unit($width)
+      max-width $width
     else
-        max-width $width
+      max-width unit($width, px)
+  else
+    max-width $width
 
-    if $height is a 'unit'
-        if unit($height)
-            height $height
-        else
-            height unit($height, px)
+  if $height is a 'unit'
+    if unit($height)
+      height $height
     else
-        height $height
+      height unit($height, px)
+  else
+    height $height
 
 
 /*
@@ -118,21 +118,21 @@ max-size($width, $height = $width)
 | height: 500px;
 */
 min-size($width, $height = $width)
-    if $width is a 'unit'
-        if unit($width)
-            min-width $width
-        else
-            min-width unit($width, px)
+  if $width is a 'unit'
+    if unit($width)
+      min-width $width
     else
-        min-width $width
+      min-width unit($width, px)
+  else
+    min-width $width
 
-    if $height is a 'unit'
-        if unit($height)
-            height $height
-        else
-            height unit($height, px)
+  if $height is a 'unit'
+    if unit($height)
+      height $height
     else
-        height $height
+      height unit($height, px)
+  else
+    height $height
 
 
 /*
@@ -142,12 +142,12 @@ min-size($width, $height = $width)
 | Import fonts via @font-face
 */
 font-face($fontname, $fontfile, $fontweight = normal, $fontstyle = normal)
-    @font-face
-        font-family $fontname
-        src font-url($fontfile)
-        src: font-url($fontfile + '.eot?#iefix') format("embedded-opentype"), font-url($fontfile + '.woff') format("woff"), font-url('ttf') format("truetype"), font-url($fontfile + '.svg#Hipster') format("svg");
-        font-weight $fontweight
-        font-style $fontstyle
+  @font-face
+    font-family $fontname
+    src font-url($fontfile)
+    src: font-url($fontfile + '.eot?#iefix') format("embedded-opentype"), font-url($fontfile + '.woff') format("woff"), font-url('ttf') format("truetype"), font-url($fontfile + '.svg#Hipster') format("svg");
+    font-weight $fontweight
+    font-style $fontstyle
 
 
 /*
@@ -158,11 +158,11 @@ font-face($fontname, $fontfile, $fontweight = normal, $fontstyle = normal)
 | More in: http://www.barrelny.com/blog/text-align-justify-and-rwd/
 */
 inline-block-holder()
-    text-align justify
-    &:after
-        content " "
-        display inline-block
-        width 100%
+  text-align justify
+  &:after
+    content " "
+    display inline-block
+    width 100%
 
 
 /*
@@ -180,10 +180,10 @@ inline-block-holder()
 | height: auto;
 */
 center($width = false, $height = auto)
-    if $width
-        size($width, $height)
-    margin-left auto
-    margin-right auto
+  if $width
+    size($width, $height)
+  margin-left auto
+  margin-right auto
 
 
 /*
@@ -194,11 +194,11 @@ center($width = false, $height = auto)
 | Works well in IE9+
 */
 center-transform($width = false, $height = auto)
-    if $width
-        size($width, $height)
-    position relative
-    top 50%
-    transform: translateY(-50%)
+  if $width
+    size($width, $height)
+  position relative
+  top 50%
+  transform: translateY(-50%)
 
 
 /*
@@ -214,34 +214,17 @@ center-transform($width = false, $height = auto)
 |   color #666
 */
 placeholder($color = false)
-    if (vendors is not defined)
-        vendors = webkit moz o ms
+  if (vendors is not defined)
+    vendors = webkit moz o ms
 
-    for $prefix in vendors
-        if ($prefix == webkit)
-            &::-webkit-input-placeholder
-                if $color
-                    color $color
-                {block}
-        else
-            &::-{$prefix}-placeholder
-                if ($color)
-                    color $color
-                {block}
-
-
-/*
-|--------------------------------------------------------------------------
-| +selection()
-|--------------------------------------------------------------------------
-| Pass a code block to ::selection declaration
-| Ex:
-| +selection()
-|   color #ddd
-|   background-color #999
-*/
-selection()
-    &::selection
+  for $prefix in vendors
+    if ($prefix == webkit)
+      &::-webkit-input-placeholder
+        if $color
+            color $color
         {block}
-    &::-moz-selection
+    else
+      &::-{$prefix}-placeholder
+        if ($color)
+            color $color
         {block}
