@@ -167,7 +167,7 @@ inline-block-holder()
 
 /*
 |--------------------------------------------------------------------------
-| center([$width, $height = auto])
+| center-block([$width, $height = auto])
 |--------------------------------------------------------------------------
 | Centralizes a block width margin-left and margin-right properties
 | Optionally, you can pass a 'width' and 'height' values like the size() mixin
@@ -179,7 +179,7 @@ inline-block-holder()
 | width: 120px;
 | height: auto;
 */
-center($width = false, $height = auto)
+center-block($width = false, $height = auto)
   if $width
     size($width, $height)
   margin-left auto
