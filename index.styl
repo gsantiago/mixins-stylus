@@ -1,0 +1,229 @@
+/*
+|--------------------------------------------------------------------------
+| image-url($file)
+|--------------------------------------------------------------------------
+| Returns a image path in a url()
+|
+| Ex:
+| $IMG-PATH = '../img/'
+| background: image-url('logo.png')
+| => background: url('../img/logo.png')
+*/
+image-url($file)
+  if $IMG-PATH is defined
+    url($IMG-PATH + $file)
+  else
+    error('$IMG-PATH is not defined!')
+
+
+/*
+|--------------------------------------------------------------------------
+| font-url($file)
+|--------------------------------------------------------------------------
+| Similar to image-url(), but for fonts
+| This mixin is used by font-face() mixin
+*/
+font-url($file)
+  if $FONT-PATH is defined
+    url($FONT-PATH + $file)
+  else
+    error('$FONT-PATH is not defined!')
+
+
+/*
+|--------------------------------------------------------------------------
+| sticky-footer($footer-height [, $page-wrap = '.page-wrap'])
+|--------------------------------------------------------------------------
+| Make a sticky footer
+| More in: http://css-tricks.com/snippets/css/sticky-footer/
+*/
+sticky-footer($footer-height, $page-wrap = '.page-wrap')
+  html, body
+    height 100%
+  {$page-wrap}
+    min-height 100%
+    margin-bottom -1 * $footer-height
+    &:after
+      height $footer-height
+
+
+/*
+|--------------------------------------------------------------------------
+| size($width [, $height = $width])
+|--------------------------------------------------------------------------
+| Returns width and height properties.
+| If any unit wasn't passed, the 'px' will be added
+| Ex:
+| size(100%, 500)
+| Returns:
+| width: 100%;
+| height: 500px;
+*/
+size($width, $height = $width)
+  if $width is a 'unit'
+    if unit($width)
+      width $width
+    else
+      width unit($width, px)
+  else
+    width $width
+
+  if $height is a 'unit'
+    if unit($height)
+      height $height
+    else
+      height unit($height, px)
+  else
+    height $height
+
+
+/*
+|--------------------------------------------------------------------------
+| max-size($width [, $height = $width])
+|--------------------------------------------------------------------------
+| Similar to size(), but it uses max-width instead of width
+| Ex:
+| max-size(100%, 500)
+| Returns:
+| max-width: 100%;
+| height: 500px;
+*/
+max-size($width, $height = $width)
+  if $width is a 'unit'
+    if unit($width)
+      max-width $width
+    else
+      max-width unit($width, px)
+  else
+    max-width $width
+
+  if $height is a 'unit'
+    if unit($height)
+      height $height
+    else
+      height unit($height, px)
+  else
+    height $height
+
+
+/*
+|--------------------------------------------------------------------------
+| min-size($width [, $height = $width])
+|--------------------------------------------------------------------------
+| Similar to size(), but it uses min-width instead of width
+| Ex:
+| min-size(100%, 500)
+| Returns:
+| min-width: 100%;
+| height: 500px;
+*/
+min-size($width, $height = $width)
+  if $width is a 'unit'
+    if unit($width)
+      min-width $width
+    else
+      min-width unit($width, px)
+  else
+    min-width $width
+
+  if $height is a 'unit'
+    if unit($height)
+      height $height
+    else
+      height unit($height, px)
+  else
+    height $height
+
+
+/*
+|--------------------------------------------------------------------------
+| font-face($fontname, $fontfile [, $fontweight = normal, $fontstyle = normal])
+|--------------------------------------------------------------------------
+| Import fonts via @font-face
+*/
+font-face($fontname, $fontfile, $fontweight = normal, $fontstyle = normal)
+  @font-face
+    font-family $fontname
+    src font-url($fontfile)
+    src: font-url($fontfile + '.eot?#iefix') format("embedded-opentype"), font-url($fontfile + '.woff') format("woff"), font-url('ttf') format("truetype"), font-url($fontfile + '.svg#Hipster') format("svg");
+    font-weight $fontweight
+    font-style $fontstyle
+
+
+/*
+|--------------------------------------------------------------------------
+| inline-block-holder()
+|--------------------------------------------------------------------------
+| Justifies inline-blocks
+| More in: http://www.barrelny.com/blog/text-align-justify-and-rwd/
+*/
+inline-block-holder()
+  text-align justify
+  &:after
+    content " "
+    display inline-block
+    width 100%
+
+
+/*
+|--------------------------------------------------------------------------
+| center-block([$width, $height = auto])
+|--------------------------------------------------------------------------
+| Centralizes a block width margin-left and margin-right properties
+| Optionally, you can pass a 'width' and 'height' values like the size() mixin
+| Ex:
+| center(120)
+| Returns:
+| margin-left: auto;
+| margin-right: auto;
+| width: 120px;
+| height: auto;
+*/
+center-block($width = false, $height = auto)
+  if $width
+    size($width, $height)
+  margin-left auto
+  margin-right auto
+
+
+/*
+|--------------------------------------------------------------------------
+| placeholder([$color = false])
+|--------------------------------------------------------------------------
+| A mixin to define placeholder properties.
+| You can pass a block of code or just the color property
+| Ex:
+| placeholder(#666)
+| Or:
+| +placeholder()
+|   color #666
+*/
+placeholder($color = false)
+  if (vendors is not defined)
+    vendors = webkit moz o ms
+
+  for $prefix in vendors
+    if ($prefix == webkit)
+      &::-webkit-input-placeholder
+        if $color
+            color $color
+        {block}
+    else
+      &::-{$prefix}-placeholder
+        if ($color)
+            color $color
+        {block}
+
+
+/*
+|--------------------------------------------------------------------------
+| fluid-image([$display = false])
+|--------------------------------------------------------------------------
+| A simple mixin to make images responsives.
+| You can pass a display property
+*/
+fluid-image($display = false)
+  if $display
+    display $display
+  max-width 100%
+  height auto
