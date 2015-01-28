@@ -152,21 +152,6 @@ font-face($fontname, $fontfile, $fontweight = normal, $fontstyle = normal)
 
 /*
 |--------------------------------------------------------------------------
-| inline-block-holder()
-|--------------------------------------------------------------------------
-| Justifies inline-blocks
-| More in: http://www.barrelny.com/blog/text-align-justify-and-rwd/
-*/
-inline-block-holder()
-  text-align justify
-  &:after
-    content " "
-    display inline-block
-    width 100%
-
-
-/*
-|--------------------------------------------------------------------------
 | center-block([$width, $height = auto])
 |--------------------------------------------------------------------------
 | Centralizes a block with margin-left and margin-right properties
