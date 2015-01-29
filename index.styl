@@ -184,20 +184,16 @@ center-block($width = false, $height = auto)
 |   color #666
 */
 placeholder($color = false)
-  if (vendors is not defined)
-    vendors = webkit moz o ms
+  $vendors = ':-webkit-input', ':-moz', '-moz', '-o', '-ms'
 
-  for $prefix in vendors
-    if ($prefix == webkit)
-      &::-webkit-input-placeholder
-        if $color
-            color $color
-        {block}
-    else
-      &::-{$prefix}-placeholder
-        if ($color)
-            color $color
-        {block}
+  for $prefix in $vendors
+    &:{$prefix}-placeholder
+      if $prefix == ':-moz' or $prefix == '-moz'
+        -moz-opacity 1
+      if $color
+        color $color
+      {block}
+
 
 
 /*
