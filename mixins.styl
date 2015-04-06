@@ -225,3 +225,44 @@ hide()
   overflow hidden
   clip rect(0,0,0,0)
   border 0
+
+
+/*
+|--------------------------------------------------------------------------
+| BEM Modifier
+|--------------------------------------------------------------------------
+| Ex:
+|
+| .element
+|   +mod(big)
+|     padding: 50px
+|
+| Return:
+|
+| .element--big
+|   padding: 50px
+|
+*/
+mod($name)
+  / &--{$name}
+    {block}
+
+
+/*
+|--------------------------------------------------------------------------
+| BEM Element
+|--------------------------------------------------------------------------
+| Ex:
+|
+| .box
+|   +element(input)
+|     display: inline-block
+|
+| Return:
+|
+| .box__input
+|   display: inline-block
+*/
+element($name)
+   / &__{$name}
+     {block}
