@@ -76,3 +76,22 @@ $FONT-PATH = 'assets/fonts/'
 // Now, just import the fonts without worry about the path
 font-face('MyCustomFont', 'mycustomfontfilename')
 ```
+
+### placeholder
+
+Nib has a mixin for placeholder. But it doesn't work fine. I've created a better mixin to do the job.
+
+You can pass a `color` as an argument, or just pass a block.
+
+Example:
+
+```stylus
+.my-element
+  placeholder(#666)
+
+.input
+  +placeholder()
+    font-family Roboto, sans-serif
+    font-weight bold
+    color #000
+```

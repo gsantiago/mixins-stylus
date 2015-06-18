@@ -18,8 +18,8 @@ function matchExpected (file, done) {
       if (err) {
         return done(err);
       }
+      
       var expected = join(testPath, 'css', file.replace('.styl', '.css'));
-      console.log('testPath = ', expected);
       expected = JSON.stringify(parse(fs.readFileSync(expected, 'utf8')));
 
       try {

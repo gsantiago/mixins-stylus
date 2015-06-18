@@ -1,6 +1,6 @@
 /**
  * Simple Mixins Collections for Stylus
- * @version 0.1
+ * @version 0.2
  * @author Guilherme Santiago
  * @repo https://github.com/gsantiago/mixins-stylus
  */
@@ -42,3 +42,20 @@ mx-font-face($name, $src, $weight = false, $style = false)
     font-style $style if $style
 
 font-face ?= mx-font-face
+
+/**
+ * placeholder
+ */
+
+mx-placeholder($color = false)
+  $vendors = ':-webkit-input', '-moz', ':-moz', '-ms-input'
+
+  for $prefix in $vendors
+    &:{$prefix}-placeholder
+      if $prefix == ':-moz' or $prefix == '-moz'
+        -moz-opacity 1
+      if $color
+        color $color
+      {block}
+
+placeholder ?= mx-placeholder

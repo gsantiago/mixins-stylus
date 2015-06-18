@@ -1,0 +1,32 @@
+.element::-webkit-input-placeholder {
+  color: #21b01b;
+}
+.element:-moz-placeholder {
+  -moz-opacity: 1;
+  color: #21b01b;
+}
+.element::-moz-placeholder {
+  -moz-opacity: 1;
+  color: #21b01b;
+}
+.element:-ms-input-placeholder {
+  color: #21b01b;
+}
+.box::-webkit-input-placeholder {
+  font-weight: bold;
+  color: #000;
+}
+.box:-moz-placeholder {
+  -moz-opacity: 1;
+  font-weight: bold;
+  color: #000;
+}
+.box::-moz-placeholder {
+  -moz-opacity: 1;
+  font-weight: bold;
+  color: #000;
+}
+.box:-ms-input-placeholder {
+  font-weight: bold;
+  color: #000;
+}
