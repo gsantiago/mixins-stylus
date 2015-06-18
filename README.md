@@ -11,7 +11,7 @@ It's made to use with Jeet and Nib which means that I avoid to include mixins th
 
 You can just copy the `index.styl` file and import directly.
 
-But if you alreadu use NPM and tools like Grunt or Gulp, then it's better install it using NPM itself.
+But if you already use NPM and tools like Grunt or Gulp, then it's better install it using NPM itself.
 
 `npm install mixins-stylus --save-dev`
 
