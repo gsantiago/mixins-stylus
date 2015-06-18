@@ -1,5 +1,8 @@
 # Mixins for Stylus
 
+[![Build Status](https://travis-ci.org/gsantiago/mixins-stylus.svg)](https://travis-ci.org/gsantiago/mixins-stylus)
+[![npm version](https://badge.fury.io/js/mixins-stylus.svg)](http://badge.fury.io/js/mixins-stylus)
+
 A simple collection of mixins for Stylus that I use in my work.
 
 It's made to use with Jeet and Nib which means that I avoid to include mixins that Jeet or Nib already have.
