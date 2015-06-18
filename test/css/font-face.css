@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'MyCustomFontName';
+  src: url("assets/fonts/customfont-webfont.eot");
+  src: url("assets/fonts/customfont-webfont.eot?#iefix") format("embedded-opentype"), url("assets/fonts/customfont-webfont.woff2") format("woff2"), url("assets/fonts/customfont-webfont.woff") format("woff"), url("assets/fonts/customfont-webfont.ttf") format("truetype"), url("assets/fonts/customfont-webfont.svg#MyCustomFontName") format("svg");
+}

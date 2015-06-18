@@ -1,0 +1,29 @@
+{
+  "name": "mixins-stylus",
+  "version": "0.0.1",
+  "description": "Mixins collection for Stylus",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gsantiago/mixins-stylus.git"
+  },
+  "keywords": [
+    "stylus",
+    "mixins",
+    "css"
+  ],
+  "author": "Guilherme Santiago",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gsantiago/mixins-stylus/issues"
+  },
+  "homepage": "https://github.com/gsantiago/mixins-stylus#readme",
+  "devDependencies": {
+    "css-parse": "^2.0.0",
+    "glob": "^5.0.10",
+    "should": "^7.0.1",
+    "stylus": "^0.51.1"
+  }
+}

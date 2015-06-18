@@ -1,0 +1,6 @@
+.element {
+  background-image: url("../img/element.png");
+}
+.box {
+  background: transparent url("../img/logo.svg") center no-repeat;
+}

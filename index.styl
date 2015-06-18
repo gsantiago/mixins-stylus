@@ -1,10 +1,44 @@
-/*
-|--------------------------------------------------------------------------
-| MIXINS STYLUS
-|--------------------------------------------------------------------------
-| A set of mixins and classes
-| github.com/gsantiago/mixins-stylus
-*/
+/**
+ * Simple Mixins Collections for Stylus
+ * @version 0.1
+ * @author Guilherme Santiago
+ * @repo https://github.com/gsantiago/mixins-stylus
+ */
 
-@import 'mixins'
-@import 'classes'
+/**
+ * image-url ($file)
+ */
+
+mx-image-url($file)
+  if $IMG-PATH is defined
+    url($IMG-PATH + $file)
+  else
+    error('$IMG-PATH is not defined!')
+
+image-url ?= mx-image-url
+
+/**
+ * font-url ($file)
+ */
+
+mx-font-url($file)
+  if $FONT-PATH is defined
+    url($FONT-PATH + $file)
+  else
+    error('$FONT-PATH is not defined!');
+
+font-url ?= mx-font-url
+
+/**
+ * font-face
+ */
+
+mx-font-face($name, $src, $weight = false, $style = false)
+  @font-face
+    font-family $name
+    src font-url($src + '.eot')
+    src: font-url($src + '.eot?#iefix') format("embedded-opentype"), font-url($src + '.woff2') format("woff2"), font-url($src + '.woff') format("woff"), font-url($src + '.ttf') format("truetype"), font-url($src + '.svg#' + $name) format("svg");
+    font-weight $weight if $weight
+    font-style $style if $style
+
+font-face ?= mx-font-face
