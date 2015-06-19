@@ -102,3 +102,22 @@ mx-triangle($width = 10px, $height = 10px, $direction = top, $color = #000)
     border-color $color transparent transparent transparent
 
 triangle ?= mx-triangle
+
+/**
+ * absolute-center
+ */
+
+mx-absolute-center($width, $height = $width, $direction = both)
+  width $width
+  height $height
+  position absolute
+
+  if $direction == both || $direction == vertical
+    margin-top: -($height / 2px)
+    top 50%
+
+  if $direction == both || $direction == horizontal
+    margin-left: -($width / 2px)
+    left 50%
+
+absolute-center ?= mx-absolute-center

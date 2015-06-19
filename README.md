@@ -112,3 +112,22 @@ Example:
 It supports all directions from [CSS Triangle Generator](http://apps.eky.hk/css-triangle-generator/):
 
 `top` `top-right` `right` `bottom-right` `bottom` `bottom-left` `left` `top-left`
+
+
+### absolute-center
+
+Centers an element using absolute positioning. All you need to pass is the element's dimensions, and optionally its direction, `horizontal` or `vertical`. The default is `both`.
+
+`absolute-center($width, $height: $width, $direction: both)`
+
+Example:
+
+```stylus
+// Both directions
+.box
+  absolute-center(120px, 30px)
+
+// Only vertical
+.logo
+  absolute-center(50px, 30px, vertical)
+```

@@ -1,0 +1,23 @@
+.box {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  margin-top: -60px;
+  top: 50%;
+  margin-left: -60px;
+  left: 50%;
+}
+.logo {
+  width: 300px;
+  height: 500px;
+  position: absolute;
+  margin-top: -250px;
+  top: 50%;
+}
+.brand {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  margin-left: -10px;
+  left: 50%;
+}
