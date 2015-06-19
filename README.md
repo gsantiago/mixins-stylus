@@ -95,3 +95,20 @@ Example:
     font-weight bold
     color #000
 ```
+
+### triangle
+
+Simple mixin for generating triangles. Based on [Stylus Triangle mixin](https://github.com/juice49/stylus-triangle).
+
+`triangle($width, $height, $direction, $color)`
+
+Example:
+
+```stylus
+.my-blue-triangle
+  triangle(50px, 50px, top, blue)
+```
+
+It supports all directions from [CSS Triangle Generator](http://apps.eky.hk/css-triangle-generator/):
+
+`top` `top-right` `right` `bottom-right` `bottom` `bottom-left` `left` `top-left`

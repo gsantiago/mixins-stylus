@@ -1,0 +1,28 @@
+.blue-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 100px 100px 100px;
+  border-color: transparent transparent #007bff transparent;
+}
+.red-triangle-bottom-right {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 40px 50px;
+  border-color: transparent transparent #ff0048 transparent;
+}
+.green-triangle-left {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 40px 100px 40px 0;
+  border-color: transparent #14d140 transparent transparent;
+}
+.yellow-triangle-top-right {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 160px 40px 0;
+  border-color: transparent #d5ff63 transparent transparent;
+}
