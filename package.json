@@ -1,6 +1,6 @@
 {
   "name": "mixins-stylus",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Mixins collection for Stylus",
   "scripts": {
     "test": "mocha"
