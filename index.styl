@@ -121,3 +121,37 @@ mx-absolute-center($width, $height = $width, $direction = both)
     left 50%
 
 absolute-center ?= mx-absolute-center
+
+/**
+ * after pseudo-element
+ */
+
+mx-after($content = " ")
+  &::after
+    content s('"%s"', unquote($content))
+    {block}
+
+after ?= mx-after
+
+/**
+ * before pseudo-element
+ */
+
+mx-before($content = " ")
+  &::before
+    content s('"%s"', unquote($content))
+    {block}
+
+before ?= mx-before
+
+/**
+ * generate both, 'after' and 'before' pseudoelements
+ */
+
+mx-pseudo($content = " ")
+  &::before,
+  &::after
+    content s('"%s"', unquote($content))
+    {block}
+
+pseudo ?= mx-pseudo

@@ -1,0 +1,25 @@
+.element {
+  width: 100px;
+  height: 100px;
+  margin: 100px auto;
+}
+.element::before {
+  content: " ";
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.only-fill-content::before {
+  content: "Just the content property";
+}
+.content-and-block::before {
+  content: "content";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+

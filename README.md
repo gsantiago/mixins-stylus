@@ -131,3 +131,40 @@ Example:
 .logo
   absolute-center(50px, 30px, vertical)
 ```
+
+### after
+
+Utility to generate the pseudo-element `after`.
+
+`after($content = " ")`
+
+Example:
+
+```stylus
+.element
+  after('Content value')
+
+.box
+  +after('value for content property')
+    position absolute
+    top 0
+    left 0
+
+// Uses the default value for content property
+.another-element
+  +after()
+    margin 10px auto
+    background-color hotpink
+```
+
+### before
+
+It works just like the previous mixin, but for the pseudo-element `before`.
+
+`before($content = " ")`
+
+### pseudo
+
+A shortcut to use both pseudo-elements mixins, `after` and `before`.
+
+`pseudo($content = " ")`
