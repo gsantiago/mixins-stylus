@@ -1,0 +1,10 @@
+/**
+ * after pseudo-element
+ */
+
+mx-after($content = " ")
+  &::after
+    content s('"%s"', unquote($content))
+    {block}
+
+after ?= mx-after

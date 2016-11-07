@@ -1,0 +1,11 @@
+/**
+ * font-url ($file)
+ */
+
+mx-font-url($file)
+  if $FONT-PATH is defined
+    url($FONT-PATH + $file)
+  else
+    error('$FONT-PATH is not defined!');
+
+font-url ?= mx-font-url

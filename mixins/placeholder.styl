@@ -1,0 +1,16 @@
+/**
+ * placeholder
+ */
+
+mx-placeholder($color = false)
+  $vendors = ':-webkit-input', '-moz', ':-moz', '-ms-input'
+
+  for $prefix in $vendors
+    &:{$prefix}-placeholder
+      if $prefix == ':-moz' or $prefix == '-moz'
+        -moz-opacity 1
+      if $color
+        color $color
+      {block}
+
+placeholder ?= mx-placeholder

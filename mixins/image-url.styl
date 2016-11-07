@@ -1,0 +1,11 @@
+/**
+ * image-url ($file)
+ */
+
+mx-image-url($file)
+  if $IMG-PATH is defined
+    url($IMG-PATH + $file)
+  else
+    error('$IMG-PATH is not defined!')
+
+image-url ?= mx-image-url

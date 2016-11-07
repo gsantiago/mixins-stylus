@@ -1,0 +1,11 @@
+/**
+ * generate both, 'after' and 'before' pseudoelements
+ */
+
+mx-pseudo($content = " ")
+  &::before,
+  &::after
+    content s('"%s"', unquote($content))
+    {block}
+
+pseudo ?= mx-pseudo

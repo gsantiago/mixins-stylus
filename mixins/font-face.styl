@@ -1,0 +1,15 @@
+/**
+ * font-face
+ */
+
+@import 'font-url'
+
+mx-font-face($name, $src, $weight = false, $style = false)
+  @font-face
+    font-family $name
+    src font-url($src + '.eot')
+    src: font-url($src + '.eot?#iefix') format("embedded-opentype"), font-url($src + '.woff2') format("woff2"), font-url($src + '.woff') format("woff"), font-url($src + '.ttf') format("truetype"), font-url($src + '.svg#' + $name) format("svg");
+    font-weight $weight if $weight
+    font-style $style if $style
+
+font-face ?= mx-font-face
